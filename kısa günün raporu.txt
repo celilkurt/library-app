@@ -1,0 +1,49 @@
+Yarına not:
+
+-Admin için kullanıcılar listelenmeli. Bunu yapabilmem için galiba bütün Db'i mysql'e taşımam gerekebilir.
+
+
+
+
+
+
+
+16.04.20
+Galiba şimdiye kadar uğraştığım hatayı çözdüm. Zannettiğim gibi frontend kodlarındaki bir hatadan kaynaklanmıyormuş. Angular'dan istek yapma ile alakalı bir problemmiş.
+
+17.04.20
+-Kitapları listeleyebiliyorum. İki rol içinde.
+-Kitap kaydı oluşturabiliyorum. Giriş yapan adminken.
+-Kitap kaydı silebiliyorum. Giriş yapan adminken.
+-Kitap ödünç alabiliyorum. Alan kullanıcının adına barrowedBooks repository'e kayıt ediliyor.
+-Ödünç alma kaydı oluşturabiliyorum.
+-Ödünç alınan kitabı iade edebiliyorum. Eğer kullanıcı user ise 
+
+-Geriye kalanlar:
+-Ödümç alınan kitapları listeleme. 
+//Bunun için ikinci bir barrowedbooks get metodu yazmalıyım, kullanıcı adını parametre olarak alan ve sadece o kullanıcının kitaplarını geri döndüren. Böylece eğer giriş yapan kullanıcıysa sadece kendi ödünç aldığı kitapları görebilecek ve her bir kaydın karşısında iade et butonu olacak. Eğer adminse bütün ödünç alınan kitapları görebilecek ve her bir kaydın karşısında ne kadar sürenin kaldığını görülecek.
+
+-Giriş yapıldıktan sonra kullanıcının rolünü döndürmek gerek ki rolüne göre işlem yapılabilsin.
+-Fotograftan ISBN okumak ve kayıt yapmak.
+-Sunucu zamanı değiştirme.
+
+-Bunları da artık yarın bitiririm. Yani bir zahmet.
+
+18.04.20
+-Kalan süreyi yazdırmam gerek.
+-Server saatini değiştirmem gerek.
+-Görsel okumam gerek.
+
+
+22.04.20
+Tesseract ile ISBN'yi almayla birkaç gündür uğraşıyordum bugün hallettim. Rest'e fotografta gönderebiliyorum. Ama bu sadece kitap okuma bölümü için olmamalı kitap iade etmek içinde fotograf okuyup iade işlemi yapmak gerek.
+
+
+https://www.websparrow.org/spring/spring-boot-spring-security-with-jpa-authentication-and-mysql  ---auth with mysql
+https://www.journaldev.com/2509/java-datasource-jdbc-datasource-example  ---get users
+https://medium.com/@ashan.lakmal/tesseract-simple-java-optical-character-recognition-aab9f23a8f94  ---multipartFile to tesseract
+https://medium.com/@rameez.s.shaikh/upload-and-retrieve-images-using-spring-boot-angular-8-mysql-18c166f7bc98  ---fotograf yüklemek için
+https://w3path.com/new-angular-8-file-upload-or-image-upload/ ---fotograf yüklemek için
+https://medium.com/@rameez.s.shaikh/angular-7-spring-boot-basic-authentication-example-98455b73d033  ---- Auth için
+https://www.javainuse.com/spring/ang7-login ---- Auth için
+https://stackoverflow.com/questions/51299944/get-current-date-with-yyyy-mm-dd-format-in-angular-4 ---- Date için
