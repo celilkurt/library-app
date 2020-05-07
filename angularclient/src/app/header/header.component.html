@@ -1,0 +1,23 @@
+<header>
+  <nav class ="navbar navbar-expand-md navbar-dark bg-dark">
+    <div><a href="https://www.libraryapp.com" class="navbar-brand">LibraryApp</a></div>
+
+    <ul class="navbar-nav">
+
+      <li><a *ngIf="loginService.isUserLogged()" routerLink="/books" class="nav-link">Get Books</a></li>
+
+      <li><a *ngIf="isAdmin()" routerLink="/barrowedbooks" class="nav-link">Get Barrowed Books</a></li>
+      <li><a *ngIf="isAdmin()" routerLink="/users" class="nav-link">Get Users</a></li>
+      <li><a *ngIf="isAdmin()" routerLink="/addbook" class="nav-link">Add Book</a></li>
+      <li><a *ngIf="isAdmin()" routerLink="/changedate" class="nav-link">Change Date</a></li>
+
+      <li><a *ngIf="isUser()" routerLink="/barrowedbooks" class="nav-link">Get My Books</a></li>
+
+      <li><a *ngIf="!loginService.isUserLogged()" routerLink="/login" class="nav-link">Login</a></li>
+      <li><a *ngIf="loginService.isUserLogged()" routerLink="/logout" class="nav-link">LogOut</a></li>
+      <li><a *ngIf="!loginService.isUserLogged()" routerLink="/register" class="nav-link">Register</a></li>
+    </ul>
+
+  </nav>
+  <h4 style="text-align:right" >{{getCurrentDate()}}</h4>
+</header>

@@ -1,0 +1,28 @@
+<div class="card my-5">
+  <div class="card-body">
+    <table class="table table-bordered table-striped">
+      <thead class="thead-dark">
+      <tr>
+        <th *ngIf="!isUser()" scope="col">User Name</th>
+        <th scope="col">Book Name</th>
+        <th scope="col">ISBN</th>
+        <th scope="col">Barrowing Date</th>
+        <th *ngIf="isUser()" scope="col">Action</th>
+        <th scope="col">Remaining Days</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let book of books">
+        <td *ngIf="!isUser()" >{{ book.userName }}</td>
+        <td>{{ book.bookName }}</td>
+        <td>{{ book.isbn }}</td>
+        <td>{{ book.barrowingDate }}</td>
+        <td *ngIf="isUser()"><button (click)="returnBook(book.isbn,book.bookName)" class="btn btn-danger">Return Book</button>
+        </td>
+        <td>{{ book.remainingDays }} Days</td>
+        <!--    <td><a href="mailto:{{ user.email }}">{{ user.email }}</a></td>  -->
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

@@ -1,0 +1,59 @@
+<h1 class="text-center">Add a book</h1>
+<div class="container col-lg-8">
+<div class="card">
+  <div class="card-body">
+
+    <div class="form-group">
+      <label for="isbn">Image</label><br>
+      <input type="file" name="image" (change)="fileProgress($event)" />
+    </div>
+    <div *ngIf="fileUploadProgress">
+      Upload progress: {{ fileUploadProgress }}
+    </div>
+    <div class="image-preview mb-3" *ngIf="previewUrl">
+      <img [src]="previewUrl" height="300" />
+    </div>
+
+    <div class="mb-3" *ngIf="uploadedFilePath">
+      {{uploadedFilePath}}
+    </div>
+
+    <div class="form-group">
+      <button *ngIf="isSelected()" class="btn btn-primary"  (click)="onSubmit2()">Scan</button>
+    </div>
+
+
+
+    <form  (ngSubmit)="onSubmit()" #userForm="ngForm">
+
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" [(ngModel)]="book.name"
+               class="form-control"
+               id="name"
+               name="name"
+               placeholder="Enter book name"
+               required #name="ngModel">
+      </div>
+
+
+      <div class="form-group">
+        <label for="isbn">ISBN</label>
+        <input type="text" [(ngModel)]="book.isbn"
+               class="form-control"
+               id="isbn"
+               name="isbn"
+               placeholder="Enter book ISBN"
+               required #name="ngModel">
+      </div>
+
+      <button type="submit"
+              class="btn btn-info">Submit</button>
+    </form>
+    <br>
+    <button  (click)="createBooks()" class="btn btn-danger">Create Books </button>
+  </div>
+
+</div>
+
+</div>

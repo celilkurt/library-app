@@ -1,0 +1,16 @@
+<div class="container col-lg-6">
+  <h1 class="text-center">Change Date</h1>
+  <div class="card">
+    <div class="card-body">
+      <form class="form-group">
+        <div class="form-group">
+          <label for="count">Count: </label>
+          <input type="number" class="form-control" id="count" [(ngModel)]="count" placeholder="Count"
+                 name="count">
+        </div>
+
+        <button (click)=handleChange() class="btn btn-success">Change</button>
+      </form>
+    </div>
+  </div>
+</div>

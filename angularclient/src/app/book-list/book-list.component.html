@@ -1,0 +1,24 @@
+<div class="card my-5">
+  <div class="card-body">
+    <table class="table table-bordered table-striped ">
+      <thead class="thead-dark">
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">ISBN</th>
+        <th scope="col">Actions</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let book of books | async">
+        <td>{{ book.name }}</td>
+        <td>{{ book.isbn }}</td>
+        <td *ngIf="isAdmin()"><button  (click)="deleteOne(book.isbn)" class="btn btn-danger">Delete </button>
+        </td>
+        <td *ngIf="isUser()"><button  (click)="borrow(book.isbn,book.name)" class="btn btn-danger">Borrow </button>
+        </td>
+
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
